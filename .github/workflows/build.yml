@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+      SSH_KEY: ${{ secrets.PRIVATE_KEY }}
 
     steps:
       - uses: actions/checkout@v2
@@ -26,7 +27,7 @@ jobs:
       - name: Setup SSH Key
         run: |
           ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-          ssh-add - <<< "${{ secrets.PRIVATE_KEY }}"
+          ssh-add - <<< $SSH_KEY
       
       - name: rsync to target
         run: rsync -Pr -e "ssh -o StrictHostKeyChecking=accept-new" _site/ agdj@agdj.uber.space:/var/www/virtual/agdj/2023.allegutendinge.jetzt
