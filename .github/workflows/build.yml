@@ -8,6 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      ssh_key: ${{ secrets.SECRET_KEY }}
 
     steps:
       - uses: actions/checkout@v2
@@ -23,6 +25,6 @@ jobs:
 
       - uses: webfactory/ssh-agent@v0.7.0
         with:
-          ssh-private-key: ${{ secrets.PRIVATE_KEY }}
+          ssh-private-key: ${{ env.SECRET_KEY }}
       - name: rsync to target
         run: rsync -Pr -e "ssh -o StrictHostKeyChecking=accept-new" _site/ agdj@agdj.uber.space:/var/www/virtual/agdj/2023.allegutendinge.jetzt
