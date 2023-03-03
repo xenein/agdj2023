@@ -1,0 +1,17 @@
+# Site settings
+title: alleGutenDingeJETZT
+tagline: weil das nötige möglich ist
+description: > # this means to ignore newlines until "baseurl:"
+  Wir überwinden das unwürdige Transsexuellengesetz. Und das ist erst der Anfang.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://new.agdj.uber.space/" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+sass:
+  sass_dir: assets/sass
+
+# Collections
+# Add new slides as HTML files inside the _reel folder
+collections:
+  - reel
