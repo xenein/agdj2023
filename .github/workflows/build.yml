@@ -4,6 +4,8 @@ on:
   workflow_dispatch:
   push:
     branches: [ main ]
+env:
+  JEKYLL_ENV: development
 
 jobs:
   build:
@@ -27,5 +29,6 @@ jobs:
         run: |
           ssh-agent -a $SSH_AUTH_SOCK > /dev/null
           ssh-add - <<< "${{ secrets.PRIVATE_KEY }}"
+      
       - name: rsync to target
         run: rsync -Pr -e "ssh -o StrictHostKeyChecking=accept-new" _site/ agdj@agdj.uber.space:/var/www/virtual/agdj/2023.allegutendinge.jetzt
