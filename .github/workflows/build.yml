@@ -8,9 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      SSH_AUTH_SOCK: /tmp/ssh_agent.sock
-      SSH_KEY: ${{ secrets.PRIVATE_KEY }}
 
     steps:
       - uses: actions/checkout@v2
@@ -24,10 +21,8 @@ jobs:
       - name: Build page
         run: bundle exec jekyll build
 
-      - name: Setup SSH Key
-        run: |
-          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
-          ssh-add - <<< $SSH_KEY
-      
+      - uses: webfactory/ssh-agent@v0.7.0
+        with:
+          ssh-private-key: ${{ secrets.PRIVATE_KEY }}
       - name: rsync to target
         run: rsync -Pr -e "ssh -o StrictHostKeyChecking=accept-new" _site/ agdj@agdj.uber.space:/var/www/virtual/agdj/2023.allegutendinge.jetzt
