@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+{% comment %}
+
+	Landscape by Pixelarity
+	pixelarity.com | hello@pixelarity.com
+	License: pixelarity.com/license
+
+	Name:
+
+		Homepage
+
+	Description:
+
+		The homepage of your website.
+
+{% endcomment %}
+
+<!-- Header -->
+	<header id="header">
+		<nav id="nav">
+			<ul>
+
+				{% for slide in site.reel %}
+					<li><a href="#{{ slide.html_id }}">
+						{{ slide.title }}<span class="extra">{{ slide.title_extra }}</span>
+					</a></li>
+				{% endfor %}
+
+			</ul>
+		</nav>
+	</header>
+
+<!-- Main -->
+	<div id="main">
+
+		<!-- Reel -->
+			<section class="reel">
+
+				{% for slide in site.reel %}
+
+					<article id="{{ slide.html_id }}" class="slide {{ slide.class }}">
+						<img src="{{ site.baseurl }}{{ slide.image }}" alt="" data-position="{{ slide.position }}" />
+						<div class="inner">
+							{{ slide.output }}
+						</div>
+					</article>
+
+				{% endfor %}
+
+			</section>
+
+	</div>
