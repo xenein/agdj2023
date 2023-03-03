@@ -15,3 +15,6 @@ sass:
 # Add new slides as HTML files inside the _reel folder
 collections:
   - reel
+
+
+locale: de_DE
