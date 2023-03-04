@@ -6,7 +6,59 @@
 @import 'libs/vendor';
 @import 'libs/breakpoints';
 @import 'fontawesome-all.min.css';
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic|Bitter:400,700|Pacifico');
+
+@font-face {
+	font-family: 'Bitter';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../webfonts/Bitter400.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Bitter';
+	font-style: normal;
+	font-weight: 700;
+	src: url(../webfonts/Bitter700.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: italic;
+	font-weight: 400;
+	font-stretch: normal;
+	src: url(../webfonts/OpenSansItalic400.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: italic;
+	font-weight: 700;
+	font-stretch: normal;
+	src: url(../webfonts/OpenSansItalic700.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 400;
+	font-stretch: normal;
+	src: url(../webfonts/OpenSans400.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-stretch: normal;
+	src: url(../webfonts/OpenSansItalic700.ttf) format('truetype');
+}
+
+@font-face {
+	font-family: 'Pacifico';
+	font-style: normal;
+	font-weight: 400;
+	src: url(../webfonts/Pacifico400.ttf) format('truetype');
+}
 
 /*
 	Landscape by Pixelarity
@@ -16,43 +68,41 @@
 
 // Breakpoints.
 
-	@include breakpoints((
-		xlarge:   ( 1281px,  1680px ),
-		large:    ( 981px,   1280px ),
-		medium:   ( 737px,   980px  ),
-		small:    ( 481px,   736px  ),
-		xsmall:   ( 361px,   480px  ),
-		xxsmall:  ( null,    360px  )
-	));
+@include breakpoints((xlarge: (1281px, 1680px),
+		large: (981px, 1280px),
+		medium: (737px, 980px),
+		small: (481px, 736px),
+		xsmall: (361px, 480px),
+		xxsmall: (null, 360px)));
 
 // Mixins.
 
-	@mixin color($p) {
-		@include color-typography($p);
-		@include color-button($p);
-		@include color-form($p);
-		@include color-list($p);
-		@include color-table($p);
-	}
+@mixin color($p) {
+	@include color-typography($p);
+	@include color-button($p);
+	@include color-form($p);
+	@include color-list($p);
+	@include color-table($p);
+}
 
 // Base.
 
-	@import 'base/reset';
-	@import 'base/page';
-	@import 'base/typography';
+@import 'base/reset';
+@import 'base/page';
+@import 'base/typography';
 
 // Component.
 
-	@import 'components/form';
-	@import 'components/icon';
-	@import 'components/image';
-	@import 'components/list';
-	@import 'components/actions';
-	@import 'components/icons';
-	@import 'components/table';
-	@import 'components/button';
+@import 'components/form';
+@import 'components/icon';
+@import 'components/image';
+@import 'components/list';
+@import 'components/actions';
+@import 'components/icons';
+@import 'components/table';
+@import 'components/button';
 
 // Layout.
 
-	@import 'layout/header';
-	@import 'layout/main';
+@import 'layout/header';
+@import 'layout/main';
