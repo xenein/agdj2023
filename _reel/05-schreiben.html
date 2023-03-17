@@ -82,11 +82,21 @@ position: center
 </div>
 
 <script>
-const anreden = ["Werter Herr Bundesminister Buschmann"]
-const gruss = ["Freundliche Grüße"]
-const whoami = ["Mein Name ist Noa Müller und als nicht-binäre Person ist die Abschaffung des sogenannten Transsexuellengesetz für mich ein besonderes Anliegen."]
-const why = ["Ich schreibe Ihnen, da Sie als Bundesminister für Justiz mitverantwortlich für den Entwurf für das Selbstbestimmungsgesetz sind."]
-const what_do_we_want = ["Die Abschaffung des Transsexuellengesetz und die Einführung des Selbstbestimmungsgesetz ist lange überfällig. Nehmen Sie den Koalitionsvertrag ernst, geben Sie den Entwurf endlich für Fachverbände und den Bundesrat frei, um das Gesetz endlich in den Bundestag zu bringen."]
+const anreden = ["Werter Herr Bundesminister Buschmann", "Sehr geehrter Bundesjustizminister"]
+const gruss = ["Freundliche Grüße", "Mit freundlichen Grüßen", "Beste Grüße"]
+const whoami = ["Mein Name ist Noa Müller und als nicht-binäre Person ist die Abschaffung des sogenannten Transsexuellengesetz für mich ein besonderes Anliegen.",
+				"Ich bin Cassandra Sandsmark und nicht nur als Elternteil eines trans Kindes ist mir die Einführung des Selbstbestimmungsgesetz sehr wichtig.",
+				"Als Psychotherapeutin werde ich regelmäßig für Begutachtungen nach Transsexuellengesetz angefragt. Diese Gutachten lassen sich mit aktuellem Verständnis von Psychologie nicht rechtfertigen."
+			]
+const why = ["Ich schreibe Ihnen, da Sie als Bundesminister für Justiz mitverantwortlich für den Entwurf für das Selbstbestimmungsgesetz sind.",
+			 "Als Justizminister sind sie für das Selbstbestimmungsgesetz zuständig. Daher schreibe ich Ihnen heute."
+			]
+const what_do_we_want = ["Die Abschaffung des Transsexuellengesetz und die Einführung des Selbstbestimmungsgesetz ist lange überfällig. Nehmen Sie den Koalitionsvertrag ernst, geben Sie den Entwurf endlich für Fachverbände und den Bundesrat frei, um das Gesetz endlich in den Bundestag zu bringen.",
+						 "Es wird Zeit, den Fachverbänden die Stellungnahme zum Entwurf für das Selbstbestimmungsgesetz zu ermöglichen und die Einführung voranzutreiben. Ich habe gehört, dafür fehlt noch eine Unterschrift von Ihnen. Diese könnten Sie heute nachholen.",
+						 "Das Selbstbestimmungsgesetz muss endlich kommen. Derzeit liegt der Entwurf bei Ihnen im Ministerium. Bevor er in den Bundestag zum Beschluss kommen kann, muss der Bundesrat noch Stellung beziehen. Ich würde mich sehr freuen, wenn Sie das zeitnah auf den Weg bringen könnten.",
+						 "Die FDP hat in der letzten Legislatur selbst einen ambitionierten Entwurf für ein Selbstbestimmungsgesetz vorgelegt. Jetzt, wo Sie selbst in der Position sind, das voranzubringen, gerät das Verfahren ins Stocken. Ich bitte Sie: Tun Sie das Nötige, dass das Gesetz bald verabschiedet werden kann."
+						]
+
 
 // get random element from list https://stackoverflow.com/a/5915122
 const randomListElement = (list) => list[Math.floor(Math.random() * list.length)]
