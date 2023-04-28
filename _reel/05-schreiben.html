@@ -42,13 +42,13 @@ position: center
 		<h4>Das <em>Drumrum</em></h4>
 		<p>Vor dem inhaltlichen Part eine Anrede. Klassisch formal mit "Geehrter" oder vielleicht etwas offener
 			mit "Guten Tag"? Probieren wir mal so:</p>
-		<blockquote>Werter Herr Bundesminister Buschmann,</blockquote>
+		<blockquote><span id="anreden">Werter Herr Bundesminister Buschmann</span>,</blockquote>
 
 		<p>Good enough. Da stellen wir uns jetzt unser knackiges Schreiben vor. Hintendran kommt dann noch eine
 			Grußformel. Das kann sich auf die Jahreszeit beziehen: "Freundliche Ostergrüße", aber leider ist
 			meistens nicht Ostern. Für diplomatische Ämter gibts auch offizielle Formeln: "Mit ausgezeichneter
 			Hochachtung" Wir gehen klassisch:</p>
-		<blockquote>Freundliche Grüße<br />Noa Müller</blockquote>
+		<blockquote><span id="gruss">Freundliche Grüße</span><br />Noa Müller</blockquote>
 		<hr />
 		<h4>Das <em>Eingemachte</em></h4>
 		<p>Jetzt haben wir schon mal einen Rahmen auf dem (vielleicht) digitalen Papier. Jetzt fehlt "nur noch" der
@@ -59,12 +59,12 @@ position: center
 		<p>Was sich bewährt hat, ist ein kurzer Vorstellungssatz, der durchscheinen lässt, wie der eigene
 			thematische Bezug ist. Bin ich selbst trans, ist mein Kind trans, berate ich trans Personen beruflich,
 			finde ich Menschenrechte eigentlich cool, …</p>
-		<blockquote>Mein Name ist Noa Müller und als nicht-binäre Person ist die Abschaffung des sogenannten
+		<blockquote id="whoami">Mein Name ist Noa Müller und als nicht-binäre Person ist die Abschaffung des sogenannten
 			Transsexuellengesetz für mich ein besonderes Anliegen.</blockquote>
 		<h5>Wieso schreib ich?</h5>
 		<p>Jetzt ist klar, wer wir sind. Als smoothen Übergang zu unserer Forderung empfiehlt sich, die Verbindung
 			zum Empfänger klarzustellen. Hier: Der Mann ist der zuständige Bundesminister.</p>
-		<blockquote>Ich schreibe Ihnen, da Sie als Bundesminister für Justiz mitverantwortlich für den Entwurf für
+		<blockquote id="why">Ich schreibe Ihnen, da Sie als Bundesminister für Justiz mitverantwortlich für den Entwurf für
 			das Selbstbestimmungsgesetz sind.</blockquote>
 
 		<h5>Was will ich?</h5>
@@ -72,7 +72,7 @@ position: center
 			Moment, wo wir unseren Punkt machen können. Zur Erinnerung: Wir wollen, dass der Entwurf veröffentlicht
 			wird, dass Bundesrat und Verbände Stellung nehmen können. Dazu muss das Ministerium den noch freigeben.
 		</p>
-		<blockquote>Die Abschaffung des Transsexuellengesetz und die Einführung des Selbstbestimmungsgesetz ist
+		<blockquote id="what_do_we_want">Die Abschaffung des Transsexuellengesetz und die Einführung des Selbstbestimmungsgesetz ist
 			lange überfällig. Nehmen Sie den Koalitionsvertrag ernst, geben Sie den Entwurf endlich für Fachverbände
 			und den Bundesrat frei, um das Gesetz endlich in den Bundestag zu bringen.</blockquote>
 		<hr />
@@ -80,3 +80,30 @@ position: center
 		<p>Gegegebenenfalls noch bisschen anpassen, falten, in den Umschlag, Adresse drauf, Porto drauf, abschicken. Vielen Dank!</p>
 	</section>
 </div>
+
+<script>
+const anreden = ["Werter Herr Bundesminister Buschmann", "Sehr geehrter Bundesjustizminister"]
+const gruss = ["Freundliche Grüße", "Mit freundlichen Grüßen", "Beste Grüße"]
+const whoami = ["Mein Name ist Noa Müller und als nicht-binäre Person ist die Abschaffung des sogenannten Transsexuellengesetz für mich ein besonderes Anliegen.",
+				"Ich bin Cassandra Sandsmark und nicht nur als Elternteil eines trans Kindes ist mir die Einführung des Selbstbestimmungsgesetz sehr wichtig.",
+				"Als Psychotherapeutin werde ich regelmäßig für Begutachtungen nach Transsexuellengesetz angefragt. Diese Gutachten lassen sich mit aktuellem Verständnis von Psychologie nicht rechtfertigen."
+			]
+const why = ["Ich schreibe Ihnen, da Sie als Bundesminister für Justiz mitverantwortlich für den Entwurf für das Selbstbestimmungsgesetz sind.",
+			 "Als Justizminister sind sie für das Selbstbestimmungsgesetz zuständig. Daher schreibe ich Ihnen heute."
+			]
+const what_do_we_want = ["Die Abschaffung des Transsexuellengesetz und die Einführung des Selbstbestimmungsgesetz ist lange überfällig. Nehmen Sie den Koalitionsvertrag ernst, geben Sie den Entwurf endlich für Fachverbände und den Bundesrat frei, um das Gesetz endlich in den Bundestag zu bringen.",
+						 "Es wird Zeit, den Fachverbänden die Stellungnahme zum Entwurf für das Selbstbestimmungsgesetz zu ermöglichen und die Einführung voranzutreiben. Ich habe gehört, dafür fehlt noch eine Unterschrift von Ihnen. Diese könnten Sie heute nachholen.",
+						 "Das Selbstbestimmungsgesetz muss endlich kommen. Derzeit liegt der Entwurf bei Ihnen im Ministerium. Bevor er in den Bundestag zum Beschluss kommen kann, muss der Bundesrat noch Stellung beziehen. Ich würde mich sehr freuen, wenn Sie das zeitnah auf den Weg bringen könnten.",
+						 "Die FDP hat in der letzten Legislatur selbst einen ambitionierten Entwurf für ein Selbstbestimmungsgesetz vorgelegt. Jetzt, wo Sie selbst in der Position sind, das voranzubringen, gerät das Verfahren ins Stocken. Ich bitte Sie: Tun Sie das Nötige, dass das Gesetz bald verabschiedet werden kann."
+						]
+
+
+// get random element from list https://stackoverflow.com/a/5915122
+const randomListElement = (list) => list[Math.floor(Math.random() * list.length)]
+
+document.getElementById("anreden").innerText = randomListElement(anreden)
+document.getElementById("gruss").innerText = randomListElement(gruss)
+document.getElementById("whoami").innerText = randomListElement(whoami)
+document.getElementById("why").innerText = randomListElement(why)
+document.getElementById("what_do_we_want").innerText = randomListElement(what_do_we_want)
+</script>
